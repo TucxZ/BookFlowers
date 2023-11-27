@@ -6,11 +6,9 @@ import java.util.List;
 public class Usuario {
 
     private long idUsuario;
-    private boolean adm;
     private String email;
     private String senha;
     private String nome;
-    private long dataLogin;
     private List<Telefone> ListTelefone;
     private List<Publicacao> ListPublicacao;
     private List<Comentario> ListComentario;
@@ -18,14 +16,11 @@ public class Usuario {
 
     //construtores vazios
 
-    public Usuario(int i, String string, String string2, String string3, int j, boolean b){
+    public Usuario(){
         this.idUsuario=0;
-        this.adm=true;
-        this.adm=false;
         this.email="";
         this.senha="";
         this.nome="";
-        this.dataLogin=0;
         this.ListTelefone=new ArrayList<>();
         this.ListPublicacao=new ArrayList<>();
         this.ListComentario=new ArrayList<>();
@@ -35,14 +30,12 @@ public class Usuario {
 
     //construtores com todos os parametro
 
-    public Usuario(long idUsuario, boolean adm, String email, String senha, String nome, long dataLogin, 
+    public Usuario(long idUsuario, String email, String senha, String nome, 
     List<Telefone> ListTelefone, List<Publicacao> ListPublicacao, List<Comentario> ListComentario, List<Curtida> ListCurtida){
         this.idUsuario=idUsuario;
-        this.adm=adm;
         this.email=email;
         this.senha=senha;
         this.nome=nome;
-        this.dataLogin=dataLogin;
         this.ListTelefone=ListTelefone;
         this.ListPublicacao=ListPublicacao;
         this.ListComentario=ListComentario;
@@ -58,14 +51,6 @@ public class Usuario {
 
     public long getIdUsuario() {
         return idUsuario;
-    }
-
-    public void setAdm(boolean adm) {
-        this.adm = adm;
-    }
-
-    public boolean getAdm(){
-        return adm;
     }
 
     public void setEmail(String email) {
@@ -89,14 +74,6 @@ public class Usuario {
 
     public String getNome() {
         return nome;
-    }
-
-    public void setDataLogin(long dataLogin) {
-        this.dataLogin = dataLogin;
-    }
-
-    public long getDataLogin() {
-        return dataLogin;
     }
 
     public void setListTelefone(List<Telefone> listTelefone) {
@@ -135,7 +112,7 @@ public class Usuario {
 
     @Override
     public String toString(){
-        return idUsuario+" "+adm+" "+email+" "+senha+" "+nome+" "+dataLogin+" "+ListTelefone+" "+ListPublicacao+" "+ListComentario+" "+ListCurtida;
+        return idUsuario+" "+email+" "+senha+" "+nome;
     }
 
   

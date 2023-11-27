@@ -4,7 +4,6 @@ public class Comentario{
     
     private long idComentario;
     private String textoC;
-    private long dataHoraC;
     private Usuario usuario;
     private Publicacao publicacao;
 
@@ -13,7 +12,6 @@ public class Comentario{
     public Comentario(){
         this.idComentario=0;
         this.textoC="";
-        this.dataHoraC=0;
         this.usuario=null;
         this.publicacao=null;
 
@@ -21,10 +19,9 @@ public class Comentario{
 
     //construtores com todos os parametro
 
-    public Comentario (long idComentario, String textoC, long dataHoraC, Usuario usuario, Publicacao publicacao){
+    public Comentario (long idComentario, String textoC, Usuario usuario, Publicacao publicacao){
         this.idComentario=idComentario;
         this.textoC=textoC;
-        this.dataHoraC=dataHoraC;
         this.usuario=usuario;
         this.publicacao=publicacao;
 
@@ -48,14 +45,6 @@ public class Comentario{
         return textoC;
     }
 
-    public void setDataHoraC(long dataHoraC) {
-        this.dataHoraC = dataHoraC;
-    }
-
-    public long getDataHoraC() {
-        return dataHoraC;
-    }
-
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
@@ -76,7 +65,7 @@ public class Comentario{
 
     @Override
     public String toString(){
-        return idComentario+" "+textoC+" "+dataHoraC+" "+usuario+" "+publicacao;
+        return idComentario+" "+textoC+" "+usuario+" "+publicacao;
     }
 
    

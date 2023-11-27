@@ -8,7 +8,6 @@ public class Publicacao{
     private long idPublicacao;
     private String textoP;
     private String foto;
-    private long dataHoraP;
     private Usuario usuario;
     private List<Comentario> ListComentario;
     private List<Curtida> ListCurtida;
@@ -19,7 +18,6 @@ public class Publicacao{
         this.idPublicacao=0;
         this.textoP="";
         this.foto="";
-        this.dataHoraP=0;
         this.usuario=null;
         this.ListComentario=new ArrayList<>();
         this.ListCurtida=new ArrayList<>();
@@ -27,11 +25,10 @@ public class Publicacao{
 
     //construtores com todos os parametro
 
-    public Publicacao (long idPublicacao, String textoP, String foto, long dataHoraP, Usuario usuario, List<Comentario> ListComentario, List<Curtida> ListCurtida){
+    public Publicacao (long idPublicacao, String textoP, String foto, Usuario usuario, List<Comentario> ListComentario, List<Curtida> ListCurtida){
         this.idPublicacao=idPublicacao;
         this.textoP=textoP;
         this.foto=foto;
-        this.dataHoraP=dataHoraP;
         this.usuario=usuario;
         this.ListComentario=ListComentario;
         this.ListCurtida=ListCurtida;
@@ -64,14 +61,6 @@ public class Publicacao{
         return foto;
     }
 
-    public void setDataHoraP(long dataHoraP) {
-        this.dataHoraP = dataHoraP;
-    }
-
-    public long getDataHoraP() {
-        return dataHoraP;
-    }
-
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
@@ -100,7 +89,7 @@ public class Publicacao{
 
      @Override
      public String toString(){
-         return idPublicacao+" "+textoP+" "+foto+" "+dataHoraP+" "+usuario+" "+ListComentario+" "+ListCurtida;
+         return idPublicacao+" "+textoP+" "+foto+" "+usuario+" "+ListComentario+" "+ListCurtida;
      }
  
 }
